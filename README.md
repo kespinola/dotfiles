@@ -9,7 +9,7 @@ Configure mac. Setup and management using [rcm](http://thoughtbot.github.io/rcm/
 When running for the first time run the install script.
 
 ```
-$> ./install.sh
+$ ./up.sh
 ```
 
 ### Resave
@@ -17,7 +17,7 @@ $> ./install.sh
 After adding a new dotfile resave the install script.
 
 ```
-%> dotup
+$ dotup
 ```
 
 ## Samples

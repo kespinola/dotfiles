@@ -85,7 +85,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Update dotfiles
-alias dotup="rcup -x README.md -x install.sh && env RCRC=/dev/null rcup -x README.md -x install.sh -B 0 -g > install.sh"
+alias dotup="rcup -x README.md -x up.sh -x install.sh -x Brewfile -x macos.sh -x spectacle.json -U '*:*Solarized%20Dark.itermcolors*' \
+&& env RCRC=/dev/null rcup -x up.sh -x README.md -x install.sh -x Brewfile -x macos.sh -x spectacle.json -U '*:*Solarized%20Dark.itermcolors*' -B 0 -g > install.sh"
 
 . $HOME/.asdf/asdf.sh
 

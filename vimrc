@@ -33,7 +33,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'liquid.vim'
 Plugin 'matze/vim-move'
 Plugin 'mileszs/ack.vim'
-Plugin 'morhetz/gruvbox'
+Plugin 'tomasiser/vim-code-dark'
 Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nginx.vim'
@@ -62,7 +62,7 @@ filetype plugin on
 syntax on
 set t_Co=256
 set background=dark
-colorscheme gruvbox
+colorscheme codedark
 let g:onedark_terminal_italics=1
 let g:solarized_termcolors=256
 
@@ -109,7 +109,7 @@ let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
+let g:airline_theme='codedark'
 " Key Bindings
 nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
