@@ -6,7 +6,7 @@ Configure mac. Setup and management using [rcm](http://thoughtbot.github.io/rcm/
 
 ### Bootstrap
 
-When running for the first time run the install script.
+First setup installation run the up command.
 
 ```
 $ ./up.sh
@@ -30,6 +30,4 @@ $ dotup
 # Please adapt and uncomment the following lines:
 name = NAME 
 email = EMAIL 
-[core]
-  editor = /usr/bin/vim
 ```

@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,14 +84,34 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Export env
+function envup() {
+  if [ -f .env ]; then
+    export $(sed '/^ *#/ d' .env)
+  else
+    echo 'No .env file found' 1>&2
+    return 1
+  fi
+}
+
 # Update dotfiles
-alias dotup="rcup -x README.md -x up.sh -x install.sh -x Brewfile -x macos.sh -x spectacle.json -U '*:*Solarized%20Dark.itermcolors*' \
-&& env RCRC=/dev/null rcup -x up.sh -x README.md -x install.sh -x Brewfile -x macos.sh -x spectacle.json -U '*:*Solarized%20Dark.itermcolors*' -B 0 -g > install.sh"
+alias dotup="rcup -x README.md -x up.sh -x install.sh -x Brewfile -x macos.sh -x spectacle.json \
+&& env RCRC=/dev/null rcup -x up.sh -x README.md -x install.sh -x Brewfile -x macos.sh -x spectacle.json -B 0 -g > install.sh"
+
+export TERM=xterm-256color
 
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
+
+export PATH=~/.local/bin:$PATH
+
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"

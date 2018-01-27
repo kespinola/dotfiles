@@ -24,16 +24,15 @@ Plugin 'flowtype/vim-flow'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'joshdick/onedark.vim'
 Plugin 'jparise/vim-graphql'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plugin 'junegunn/vim-easy-align'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'liquid.vim'
+Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'matze/vim-move'
 Plugin 'mileszs/ack.vim'
-Plugin 'tomasiser/vim-code-dark'
 Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nginx.vim'
@@ -48,6 +47,7 @@ Plugin 'slashmili/alchemist.vim'
 Plugin 'szw/vim-tags'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'tomasiser/vim-code-dark'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
@@ -63,7 +63,7 @@ syntax on
 set t_Co=256
 set background=dark
 colorscheme codedark
-let g:onedark_terminal_italics=1
+
 let g:solarized_termcolors=256
 
 " indenting
@@ -109,7 +109,8 @@ let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='codedark'
+let g:airline_theme = 'codedark'
+
 " Key Bindings
 nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
