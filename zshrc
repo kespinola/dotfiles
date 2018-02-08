@@ -95,23 +95,40 @@ function envup() {
 }
 
 # Update dotfiles
-alias dotup="rcup -x README.md -x up.sh -x install.sh -x Brewfile -x macos.sh -x spectacle.json \
-&& env RCRC=/dev/null rcup -x up.sh -x README.md -x install.sh -x Brewfile -x macos.sh -x spectacle.json -B 0 -g > install.sh"
+alias dotup="rcup -x README.md -x tags -x rcrc -x up.sh -x install.sh -x Brewfile -x macos.sh -x spectacle.json -U ctags \
+&& env RCRC=/dev/null rcup -x up.sh -x README.md -x install.sh -x rcrc -x tags -x Brewfile -x macos.sh -x spectacle.json -U ctags -B 0 -g > install.sh"
 
-export TERM=xterm-256color
+export TERM=screen-256color
 
+# neovim
+alias vim="nvim"
+
+# golang
+[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+
+# asdf
 . $HOME/.asdf/asdf.sh
-
 . $HOME/.asdf/completions/asdf.bash
+
+# rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+# pyenv
 eval "$(pyenv init -)"
 
 export PATH=~/.local/bin:$PATH
 
+# fze
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# icu4c
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"

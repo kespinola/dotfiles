@@ -6,57 +6,53 @@ set swapfile
 set dir=~/tmp/vim
 
 set directory^=$HOME/.vim/tmp/
-set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin()
+call plug#begin()
 
-Plugin 'Align'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'Shougo/vimproc.vim', {'do' : 'make'}
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'ekalinin/dockerfile.vim'
-Plugin 'elmcast/elm-vim'
-Plugin 'ervandew/supertab'
-Plugin 'flowtype/vim-flow'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'jparise/vim-graphql'
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
-Plugin 'junegunn/vim-easy-align'
-Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'liquid.vim'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'matze/vim-move'
-Plugin 'mileszs/ack.vim'
-Plugin 'mxw/vim-jsx'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'nginx.vim'
-Plugin 'quramy/tsuquyomi'
-Plugin 'raimondi/delimitmate'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'seagoj/whitespace.vim'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'slashmili/alchemist.vim'
-Plugin 'szw/vim-tags'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tomasiser/vim-code-dark'
-Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'VundleVim/Vundle.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'easymotion/vim-easymotion'
+Plug 'ekalinin/dockerfile.vim'
+Plug 'elmcast/elm-vim'
+Plug 'ervandew/supertab'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'flowtype/vim-flow'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'jiangmiao/auto-pairs'
+Plug 'jparise/vim-graphql'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'leafgarland/typescript-vim'
+Plug 'matze/vim-move'
+Plug 'mileszs/ack.vim'
+Plug 'mxw/vim-jsx'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'quramy/tsuquyomi'
+Plug 'raimondi/delimitmate'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'seagoj/whitespace.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'slashmili/alchemist.vim'
+Plug 'szw/vim-tags'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tomasiser/vim-code-dark'
+Plug 'tomtom/tlib_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-call vundle#end()
+call plug#end()
 
 filetype plugin on
 syntax on
@@ -74,6 +70,18 @@ set autoindent
 "Wrap at 110 and show the ruler
 set textwidth=110
 set colorcolumn=+0
+
+" Go
+let g:go_list_type = "quickfix"
+let g:go_fmt_fail_silently = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
 
 " Elm
 let g:elm_format_autosave = 1
@@ -128,14 +136,6 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-
-" Vim Move
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
 
 set timeout ttimeoutlen=50
 let g:tmux_navigator_no_mappings = 1
