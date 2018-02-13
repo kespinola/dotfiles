@@ -3,12 +3,11 @@ set relativenumber
 set number
 
 set swapfile
-set dir=~/tmp/vim
-
-set directory^=$HOME/.vim/tmp/
+set directory=tmp,$HOME/tmp/vim
 
 call plug#begin()
 
+Plug '/usr/local/opt/fzf'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -25,7 +24,8 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jparise/vim-graphql'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'leafgarland/typescript-vim'
 Plug 'matze/vim-move'
@@ -65,7 +65,6 @@ let g:solarized_termcolors=256
 " indenting
 set ts=2 sw=2 et
 let g:indent_guides_start_level=2
-set autoindent
 
 "Wrap at 110 and show the ruler
 set textwidth=110
@@ -82,6 +81,10 @@ let g:go_highlight_methods = 1
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
+" Easy Align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " Elm
 let g:elm_format_autosave = 1
@@ -125,12 +128,6 @@ nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
@@ -139,9 +136,3 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 set timeout ttimeoutlen=50
 let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
-nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
-nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
-nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
-nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>

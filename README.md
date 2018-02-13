@@ -30,4 +30,5 @@ $ dotup
 # Please adapt and uncomment the following lines:
 name = NAME 
 email = EMAIL 
+editor = /usr/local/bin/nvim
 ```
