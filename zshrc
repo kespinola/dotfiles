@@ -7,7 +7,7 @@ export ZSH=/Users/kyleespinola/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="zhann"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +51,7 @@ ZSH_THEME="zhann"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl docker tmux rbenv)
+plugins=(git kubectl tmux rbenv ruby rake)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,20 +60,20 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -94,14 +94,19 @@ function envup() {
   fi
 }
 
+# brew wrap extension for Brewfile
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
+fi
+
 # Update dotfiles
-alias dotup="rcup -x README.md -x tags -x rcrc -x up.sh -x install.sh -x Brewfile -x macos.sh -x spectacle.json -U ctags \
-&& env RCRC=/dev/null rcup -x up.sh -x README.md -x install.sh -x rcrc -x tags -x Brewfile -x macos.sh -x spectacle.json -U ctags -B 0 -g > install.sh"
+alias dotup="rcup -x README.md -x tags -x rcrc -x up.sh -x install.sh -x macos.sh -x spectacle.json -U ctags \
+&& env RCRC=/dev/null rcup -x up.sh -x README.md -x install.sh -x rcrc -x tags -x macos.sh -x spectacle.json -U ctags -B 0 -g > install.sh"
+alias k="kubectl"
+alias vi="nvim"
 
 export TERM=screen-256color
-
-# neovim
-alias vim="nvim"
+export KUBE_EDITOR=nvim
 
 # golang
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
@@ -113,10 +118,6 @@ alias vim="nvim"
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
 
 # pyenv
 eval "$(pyenv init -)"
@@ -132,3 +133,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # icu4c
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export HELM_HOME="$HOME/.helm"
+export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="/usr/local/opt/openssl/bin:$PATH"

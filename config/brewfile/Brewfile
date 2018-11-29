@@ -1,0 +1,214 @@
+
+# tap repositories and their packages
+
+tap homebrew/core
+brew ack
+brew adns
+brew asdf
+brew aspell
+brew atk
+brew atkmm
+brew augeas
+brew autoconf
+brew automake
+brew bdw-gc
+brew boost
+brew boost-build
+brew cairo
+brew cairomm
+brew cask
+brew certbot
+brew cgal
+brew cmake
+brew coreutils
+brew ctags
+brew dep
+brew dialog
+brew elasticsearch
+brew elm
+brew emacs
+brew erlang
+brew fd
+brew fontconfig
+brew freetype
+brew freexl
+brew fribidi
+brew fzf
+brew gd
+brew gdal
+brew gdbm
+brew gdk-pixbuf
+brew geos
+brew gettext
+brew giflib
+brew git
+brew git-flow
+brew glew
+brew glib
+brew glib-networking
+brew glibmm
+brew glide
+brew gmp
+brew gnupg
+brew gnutls
+brew go
+brew gource
+brew graphicsmagick
+brew graphite2
+brew graphviz
+brew gsettings-desktop-schemas
+brew gsl
+brew gtk+
+brew gtkmm
+brew harfbuzz
+brew hicolor-icon-theme
+brew icu4c
+brew imagemagick
+brew intltool
+brew jemalloc
+brew jpeg
+brew jq
+brew json-c
+brew kubernetes-helm
+brew libassuan
+brew libevent
+brew libffi
+brew libgcrypt
+brew libgeotiff
+brew libgpg-error
+brew libidn2
+brew libksba
+brew liblwgeom
+brew libpng
+brew libpqxx
+brew libsigc++
+brew libsoup
+brew libspatialite
+brew libssh
+brew libssh2
+brew libtasn1
+brew libtermkey
+brew libtiff
+brew libtool
+brew libunistring
+brew libusb
+brew libuv
+brew libvterm
+brew libxml2
+brew libyaml
+brew little-cms
+brew little-cms2
+brew lua
+brew lua@5.1
+brew luajit
+brew lzlib
+brew mas
+brew memcached
+brew mpfr
+brew msgpack
+brew neovim
+brew nettle
+brew npth
+brew nvm
+brew oniguruma
+brew openjpeg
+brew openssl
+brew openssl@1.1
+brew p11-kit
+brew pango
+brew pangomm
+brew parallel
+brew pcre
+brew perl
+brew pinentry
+brew pixman
+brew pkg-config
+brew poppler
+brew popt
+brew postgis
+brew postgresql@9.5
+brew potrace
+brew proj
+brew pyenv
+brew python
+brew python@2
+brew rbenv
+brew readline
+brew redis
+brew rename
+brew ruby
+brew ruby-build
+brew rust
+brew sdl2
+brew sdl2_image
+brew selenium-server-standalone
+brew sfcgal
+brew sl
+brew sqlite
+brew telnet
+brew the_silver_searcher
+brew tmate
+brew tmux
+brew tmux-cssh
+brew transmission
+brew tree
+brew unibilium
+brew unixodbc
+brew vala
+brew vault
+brew watch
+brew watchman
+brew webp
+brew wget
+brew wxmac
+brew xz
+
+tap homebrew/bundle
+
+tap homebrew/services
+
+tap homebrew/versions
+
+tap homebrew/cask
+cask atom
+cask graphiql
+cask java
+cask licecap
+cask omnifocus
+cask slack
+cask virtualbox
+
+tap caskformula/caskformula
+
+tap mcasper/formulae
+brew git-clean
+
+tap neovim/neovim
+
+tap rcmdnk/file
+brew brew-file
+
+tap shopify/shopify
+brew themekit
+
+tap thoughtbot/formulae
+brew rcm
+
+# Other Homebrew packages
+brew heroku
+
+# Other Cask applications
+cask flux
+cask iterm2
+cask lastpass
+cask minikube
+cask postman
+cask spotify
+cask visual-studio-code
+
+# App Store applications
+appstore 417375580 BetterSnapTool (1.9)
+appstore 405399194 Kindle (1.23.3)
+appstore 926036361 LastPass (4.2.0)
+appstore 1278508951 Trello (2.10.8)
+appstore 497799835 Xcode (10.0)
