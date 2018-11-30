@@ -11,6 +11,7 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
+Plug '/usr/local/opt/fzf'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -18,6 +19,7 @@ Plug 'andrewstuart/vim-kubernetes'
 Plug 'easymotion/vim-easymotion'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'elmcast/elm-vim'
+Plug 'tpope/vim-dispatch'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'flowtype/vim-flow'
@@ -40,8 +42,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'slashmili/alchemist.vim'
 Plug 'szw/vim-tags'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'thoughtbot/vim-rspec'
 Plug 'joshdick/onedark.vim'
+Plug 'janko-m/vim-test'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
@@ -59,9 +61,9 @@ filetype plugin on
 syntax on
 set t_Co=256
 set background=dark
+let g:onedark_termcolors=256
+let g:onedark_terminal_italics=1
 colorscheme onedark
-
-let g:solarized_termcolors=256
 set termguicolors
 
 " indenting
@@ -132,10 +134,13 @@ nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
 
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+" Vim Test
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+
+let test#strategy = "dispatch"
 
 set timeout ttimeoutlen=50

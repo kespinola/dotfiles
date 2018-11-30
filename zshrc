@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl tmux rbenv ruby rake)
+plugins=(git kubectl tmux rbenv ruby rake fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -61,13 +61,6 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -122,13 +115,8 @@ eval "$(rbenv init -)"
 # pyenv
 eval "$(pyenv init -)"
 
+
 export PATH=~/.local/bin:$PATH
-
-# fze
-export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # icu4c
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
@@ -137,3 +125,6 @@ export HELM_HOME="$HOME/.helm"
 export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

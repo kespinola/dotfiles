@@ -9,10 +9,13 @@ fi
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+echo "===Setting up dotfiles==="
 ./install.sh
 
+echo "===Configuring mac==="
 ./macos.sh
 
+echo "===Installing brew packages==="
 brew install rcmdnk/file/brew-file
 brew bundle
 
