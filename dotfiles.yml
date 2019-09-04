@@ -4,3 +4,7 @@
     - role: git
       tags:
         - git
+    - role: apt
+      tags:
+        - package_manager
+        - bootstrap
