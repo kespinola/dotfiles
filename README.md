@@ -1,23 +1,15 @@
 # My dotfiles
 
-Configure mac. Setup and management using [rcm](http://thoughtbot.github.io/rcm/rcm.7.html).
+Configure linux workstation using Ansible.
 
 ## Scripts
 
 ### Bootstrap
 
-First setup installation run the up command.
+Firt setup installation run the up command.
 
 ```
 $ ./up.sh
-```
-
-### Resave
-
-After adding a new dotfile resave the install script.
-
-```
-$ dotup
 ```
 
 ## Samples

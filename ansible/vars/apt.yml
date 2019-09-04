@@ -1,0 +1,19 @@
+---
+apt:
+  # CLI
+  ansible:
+  curl:
+  docker-compose:
+  docker.io:
+  fish:
+  fzf:
+  htop:
+  neovim:
+  tmux:
+  
+  # GUI
+  chromium-browser:
+  gnome-boxes:
+  gnome-icon-theme:
+  gnome-keyring:
+  i3lock:

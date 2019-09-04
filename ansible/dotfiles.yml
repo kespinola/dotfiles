@@ -1,0 +1,60 @@
+---
+- name: Playbook for mananging kespinola dotfiles (https://github.com/kespinola/dotfiles)
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Install oh-my-zsh
+      git:
+        repo: https://github.com/robbyrussell/oh-my-zsh.git
+        dest: ~/.local/share/oh-my-zsh
+        update: yes
+
+    - name: Install oh-my-fish
+      git:
+        repo: https://github.com/oh-my-fish/oh-my-fish.git
+        dest: ~/.local/share/omf
+        update: yes
+
+    - name: Install tmux plugin manager
+      git:
+        repo: https://github.com/tmux-plugins/tpm.git
+        dest: ~/.local/share/tpm
+        update: yes
+
+    - name: Install dein.vim
+      git:
+        repo: https://github.com/Shougo/dein.vim.git
+        dest: =~/.local/share/dein/repos/github.com/Shougo/dein.vim
+        update: yes
+
+    - name: Create folder
+      file:
+        path: "{{item}}"
+        state: directory
+      loop:
+        - "~/.cache/bash/"
+        - "~/.cache/vim/"
+        - "~/.cache/vim/backup/"
+        - "~/.cache/vim/dein/"
+        - "~/.cache/vim/swap/"
+        - "~/.cache/vim/undo/"
+        - "~/.cache/wget/"
+        - "~/.config/fish/"
+        - "~/.config/i3/"
+        - "~/.config/i3blocks/"
+        - "~/.config/karabiner/"
+        - "~/.config/omf/"
+        - "~/.config/terminator/"
+        - "~/.config/termite/"
+        - "~/.config/vscode/"
+        - "~/.local/share/zsh/"
+        - "~/Code/"
+        - "~/Code/golang/"
+
+    - include: tasks/packages.yml
+      tags:
+        - packages
+
+    - include: tasks/link_files.yml
+      tags:
+        - link
