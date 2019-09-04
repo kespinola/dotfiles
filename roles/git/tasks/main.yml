@@ -1,0 +1,27 @@
+- name: Install git
+  apt: name=git state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+
+- name: Link global gitignore file
+  file:
+    src: "{{ dotfiles_home }}/roles/git/files/gitignore_global.link"
+    dest: "{{ dotfiles_user_home }}/.gitignore_global"
+    state: link
+    force: yes
+
+- name: Check if gitconfig exists
+  stat: path="{{dotfiles_user_home}}/.gitconfig"
+  register: gitconfig_stat
+
+- name: Back up gitconfig
+  command: mv ~/.gitconfig ~/.gitconfig.bak
+  args:
+    creates: "{{dotfiles_user_home}}/.gitconfig.bak"
+  when: gitconfig_stat.stat.exists
+
+- name: Make sure gitconfig is up to date
+  template:
+    src: "gitconfig.j2"
+    dest: "{{dotfiles_user_home}}/.gitconfig"

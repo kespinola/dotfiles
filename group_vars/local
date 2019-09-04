@@ -1,0 +1,8 @@
+# vi: set ft=yaml:
+
+dotfiles_user_home: "{{ '~' | expanduser }}"
+dotfiles_home: "{{ dotfiles_user_home }}/.dotfiles"
+
+full_name: Kyle Espinola
+git_user: kespinola
+git_email: kyle.s.espinola@gmail.com

@@ -1,0 +1,6 @@
+- name: Set up local workstation
+  hosts: local
+  roles:
+    - role: git
+      tags:
+        - git
