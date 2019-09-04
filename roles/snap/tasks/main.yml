@@ -1,0 +1,7 @@
+- name: Install snap packages
+  snap:
+    name: "{{ item }}"
+  become: yes
+  become_user: root
+  become_method: sudo
+  loop: "{{ snaps }}"

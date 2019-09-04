@@ -8,3 +8,6 @@
       tags:
         - package_manager
         - bootstrap
+    - role: snap
+      tags:
+        - snap
