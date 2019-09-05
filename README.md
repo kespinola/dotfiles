@@ -2,6 +2,16 @@
 
 Configure linux workstation using Ansible.
 
+## Roles
+
+- apt
+- asdf
+- git
+- tmux
+- snap
+- zsh
+- vim
+
 ## Scripts
 
 ### Bootstrap
@@ -9,18 +19,5 @@ Configure linux workstation using Ansible.
 Firt setup installation run the up command.
 
 ```
-$ ./up.sh
-```
-
-## Samples
-
-### gitconfig
-
-```
- This is Git's per-user configuration file.
-[user]
-# Please adapt and uncomment the following lines:
-name = NAME 
-email = EMAIL 
-editor = /usr/local/bin/nvim
+$ ./bin/dot-bootstrap
 ```

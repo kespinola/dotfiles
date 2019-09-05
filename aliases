@@ -1,2 +1,0 @@
-alias dotfiles="ansible-playbook -i $HOME/.dotfiles/ansible/inventory $HOME/.dotfiles/ansible/dotfiles.yml"
-alias play="ansible-playbook"

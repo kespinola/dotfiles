@@ -1,4 +1,6 @@
 snaps:
-- slack
-- kubectl
 - helm
+- kubectl
+- mailspring
+- slack
+- spotify

@@ -6,14 +6,22 @@
         - git
     - role: apt
       tags:
-        - package_manager
-        - bootstrap
+        - apt
     - role: snap
       tags:
         - snap
+    - role: asdf
+      tags:
+        - asdf
+    - role: python
+      tags:
+        - python
     - role: zsh
       tags:
         - zsh
     - role: vim
       tags:
         - vim
+    - role: tmux
+      tags:
+        - tmux
