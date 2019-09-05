@@ -14,3 +14,6 @@
     - role: zsh
       tags:
         - zsh
+    - role: vim
+      tags:
+        - vim

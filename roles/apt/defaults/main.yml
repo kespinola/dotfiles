@@ -4,10 +4,8 @@ packages:
   - curl
   - docker-compose
   - docker.io
-  - fish
   - fzf
   - htop
-  - neovim
   - jq
   - tmux
   
