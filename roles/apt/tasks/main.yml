@@ -7,8 +7,9 @@
 
 - name: Install apt packages
   apt:
-    name: "{{ packages }}"
+    name: "{{ item }}"
     update_cache: yes
   become: yes
   become_user: root
   become_method: sudo
+  loop: "{{ packages }}"

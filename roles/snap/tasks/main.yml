@@ -1,6 +1,7 @@
 - name: Install snap packages
   snap:
     name: "{{ item }}"
+    classic: yes
   become: yes
   become_user: root
   become_method: sudo

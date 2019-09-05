@@ -11,3 +11,6 @@
     - role: snap
       tags:
         - snap
+    - role: zsh
+      tags:
+        - zsh

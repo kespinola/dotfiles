@@ -8,6 +8,7 @@ packages:
   - fzf
   - htop
   - neovim
+  - jq
   - tmux
   
   # GUI

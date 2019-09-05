@@ -1,3 +1,4 @@
 snaps:
 - slack
 - kubectl
+- helm
