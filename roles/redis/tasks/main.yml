@@ -1,0 +1,19 @@
+- name: Install package
+  apt:
+    name:
+      - redis-server
+    update_cache: yes
+  become: yes
+  become_user: root
+  become_method: sudo
+
+- name: Check for redis server
+  register: redis_running
+  command: systemctl is-active redis --quiet
+
+- name: Startup with systemctl
+  command: sudo systemctl enable redis-server.service
+  become: yes
+  become_user: root
+  become_method: sudo
+  when: redis_running == 3

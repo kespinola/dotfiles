@@ -2,21 +2,35 @@
 
 Configure linux workstation using Ansible.
 
-## Roles
+### Languages
 
-- apt
-- asdf
+Languages are managed with [asdf](https://asdf-vm.com/#/).
+
+- Ruby
+- Golang
+- Nodejs
+- Python
+
+### System
+
+- fzf
 - git
 - tmux
-- snap
-- zsh
 - vim
+- zsh
 
-## Scripts
+### Services
 
-### Bootstrap
+- redis
 
-Firt setup installation run the up command.
+### Packages
+
+- snap
+- apt
+
+## Bootstrap
+
+Firt setup installation run the dot-bootstrap command.
 
 ```
 $ ./bin/dot-bootstrap
