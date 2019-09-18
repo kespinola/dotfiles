@@ -1,20 +1,25 @@
-- name: Make sure zsh is installed
+- name: Install zsh
   apt: name=zsh state=present
+  become: yes
+  become_user: root
   become_method: sudo
 
-- name: Check if zshrc already exists
+- name: Check for oh-my-zsh installation
+  stat: "path={{ dotfiles_home }}/.oh-my-zsh"
+  register: oh_my_zsh_stat
+
+- name: Check for .zshrc
   stat: path="{{dotfiles_user_home}}/.zshrc"
   register: zshrc_stat
 
-- name: Back up zshrc if it exists
+- name: Back up .zshrc
   command: mv ~/.zshrc ~/.zshrc.bak
   args:
     creates: "{{dotfiles_user_home}}/.zshrc.bak"
   when: zshrc_stat.stat.exists
 
-- import_tasks: prezto.yml
-  when: zsh_prezto
-
-- name: Copy minimal zshrc
-  copy: src=zshrc_minimal dest={{dotfiles_user_home}}/.zshrc
-  when: not zsh_prezto
+- name: Symlink .zshrc
+  file:
+    src: "{{ dotfiles_home }}/roles/zsh/files/zshrc"
+    dest: "{{dotfiles_user_home}}/.zshrc"
+    state: link

@@ -4,10 +4,14 @@ let mapleader = "\<Space>"
 """"" PLUGINS """""
 call plug#begin("~/.vim/bundle")
 " ESSENTIALS
-Plug 'andymass/vim-matchup'  " enhanced % (NOTE: must come before vim-sensible)
+Plug 'andymass/vim-matchup' " enhanced % (NOTE: must come before vim-sensible)
 Plug 'tpope/vim-sensible' " Sensible defaults
 Plug 'rstacruz/vim-opinion' " More sensible defaults
 Plug 'ervandew/supertab' " Tab complete everything
+Plug 'pangloss/vim-javascript' " Javascript highlighting
+Plug 'mxw/vim-jsx' " JSX highlighting
+Plug 'leshill/vim-json' " JSX highlighting
+let g:jsx_ext_required = 0
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy-matching go-to file
 nnoremap <C-b> :CtrlPBuffer<CR>
 map <C-t> :CtrlPBufTag<CR>
@@ -37,11 +41,12 @@ vmap <leader>/ <Plug>Commentary
 Plug 'moll/vim-bbye'  " delete buffer without closing window
 nnoremap X :Bdelete<CR>
 Plug 'vim-scripts/BufOnly.vim'  " delete all but current buffer
-
+Plug 'terryma/vim-multiple-cursors' " Multi cursor support
 Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>D :NERDTreeFind<CR>
 let NERDTreeIgnore = ['\.pyc', '__pycache__', '.egg-info[[dir]]', 'pip-wheel-metadata[[dir]]']
+let NERDTreeShowHidden=1
 
 Plug 'w0rp/ale'  " Async linting
 nmap <silent> [s <Plug>(ale_previous_wrap)
@@ -81,14 +86,13 @@ set completeopt=menu,menuone,noselect,noinsert
 " Disable pycodestyle in pyls; let flake8 do that
 let g:ale_python_pyls_config = {'pyls': {'plugins': {'pycodestyle': {'enabled': v:false}}}}
 nmap gd <Plug>(ale_go_to_definition)
-" NICE TO HAVE
 Plug 'AndrewRadev/splitjoin.vim'  " Language-specific split/join with gS and gJ
 let g:splitjoin_python_brackets_on_separate_lines = 1
 let g:splitjoin_trailing_comma = 1
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_theme='tomorrow'
+let g:airline_theme='papercolor'
 " Explicitly specify which extensions to use
 let g:airline_extensions = ['branch', 'ctrlp', 'tabline', 'ale', 'whitespace']
 Plug 'christoomey/vim-tmux-navigator'
@@ -207,7 +211,7 @@ set noerrorbells visualbell t_vb=
 
 """ VISUAL SETTINGS """
 if &term =~ '256color' | set t_ut= | endif
-set background=dark | colorscheme hybrid-sl
+set background=dark | colorscheme PaperColor
 
 " Show trailing whitespace
 set list listchars=tab:▸\ ,trail:▫
