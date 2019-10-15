@@ -13,3 +13,13 @@
   become_user: root
   become_method: sudo
   loop: "{{ packages }}"
+
+- name: Remove apt packages
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    state: absent
+  become: yes
+  become_user: root
+  become_method: sudo
+  loop: "{{ remove_packages }}"

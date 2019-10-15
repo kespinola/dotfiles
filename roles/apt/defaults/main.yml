@@ -24,6 +24,7 @@ packages:
   - wget
   - xz-utils
   - zlib1g-dev
+  - ripgrep
 
   # GUI
   - chromium-browser
@@ -31,3 +32,6 @@ packages:
   - gnome-icon-theme
   - gnome-keyring
   - i3lock
+
+remove_packages:
+  - gnome-shell-extension-ubuntu-dock

@@ -10,6 +10,18 @@
     - role: snap
       tags:
         - snap
+    - role: zsh
+      tags:
+        - zsh
+    - role: fzf
+      tags:
+        - fzf
+    - role: vim
+      tags:
+        - vim
+    - role: tmux
+      tags:
+        - tmux
     - role: asdf
       tags:
         - asdf
@@ -28,15 +40,3 @@
     - role: redis
       tags:
         - redis
-    - role: zsh
-      tags:
-        - zsh
-    - role: fzf
-      tags:
-        - fzf
-    - role: vim
-      tags:
-        - vim
-    - role: tmux
-      tags:
-        - tmux

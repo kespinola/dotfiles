@@ -5,8 +5,12 @@
   become_method: sudo
 
 - name: Check for oh-my-zsh installation
-  stat: "path={{ dotfiles_home }}/.oh-my-zsh"
+  stat: "path=~/.oh-my-zsh"
   register: oh_my_zsh_stat
+
+- name: Install oh-my-zsh
+  raw: "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
+  when: not oh_my_zsh_stat.stat.exists
 
 - name: Check for .zshrc
   stat: path="{{dotfiles_user_home}}/.zshrc"
@@ -17,6 +21,11 @@
   args:
     creates: "{{dotfiles_user_home}}/.zshrc.bak"
   when: zshrc_stat.stat.exists
+
+- name: Remove .zshrc
+  command: rm ~/.zshrc
+  when: zshrc_stat.stat.exists
+
 
 - name: Symlink .zshrc
   file:
