@@ -1,0 +1,11 @@
+- name: Add terraform plugin
+  command: "asdf plugin-add terraform"
+  register: terraform_add
+  failed_when: terraform_add == 2
+
+- name: "Install terraform versions"
+  command: asdf install terraform {{item}}
+  loop: "{{terraform_versions}}"
+
+- name: Set global version for terraform to {{terraform_versions[0]}}
+  command: "asdf global terraform {{terraform_versions[0]}}"
