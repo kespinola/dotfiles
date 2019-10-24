@@ -13,6 +13,7 @@ Plug 'mxw/vim-jsx' " JSX highlighting
 Plug 'leshill/vim-json' " JSX highlighting
 let g:jsx_ext_required = 0
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy-matching go-to file
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " go lang language support
 nnoremap <C-b> :CtrlPBuffer<CR>
 map <C-t> :CtrlPBufTag<CR>
 " Make ctrlp faster

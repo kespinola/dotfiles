@@ -68,7 +68,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git ruby kubectl dotenv)
+plugins=(git ruby kubectl aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,6 +108,7 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 export FZF_DEFAULT_COMMAND='rg --hidden --ignore .git -g ""'
 
 export GOPATH=$HOME/Code/go
+export PATH=$PATH:$(go env GOPATH)/bin
 
 source $HOME/.dotfiles/roles/zsh/aliases.zsh
 source $HOME/.dotfiles/roles/zsh/completion.zsh
