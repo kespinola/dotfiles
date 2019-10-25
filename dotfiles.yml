@@ -37,6 +37,9 @@
     - role: ruby
       tags:
         - ruby
+    - role: elixir
+      tags:
+        - elixir
     - role: node
       tags:
         - node

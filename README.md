@@ -10,6 +10,7 @@ Languages are managed with [asdf](https://asdf-vm.com/#/).
 - Golang
 - Nodejs
 - Python
+- Elixir
 - Terraform
 
 ### System

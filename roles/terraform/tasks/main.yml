@@ -5,7 +5,7 @@
 
 - name: "Install terraform versions"
   command: asdf install terraform {{item}}
-  loop: "{{terraform_versions}}"
+  loop: "{{versions}}"
 
-- name: Set global version for terraform to {{terraform_versions[0]}}
-  command: "asdf global terraform {{terraform_versions[0]}}"
+- name: Set global version for terraform to {{versions[0]}}
+  command: "asdf global terraform {{versions[0]}}"

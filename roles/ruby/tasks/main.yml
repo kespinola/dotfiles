@@ -5,7 +5,7 @@
 
 - name: "Install ruby versions"
   command: asdf install ruby {{item}}
-  loop: "{{ruby_versions}}"
+  loop: "{{versions}}"
 
-- name: Set global version for ruby to {{ruby_versions[1]}}
-  command: "asdf global ruby {{ruby_versions[0]}}"
+- name: Set global version for ruby to {{versions[0]}}
+  command: "asdf global ruby {{versions[0]}}"
