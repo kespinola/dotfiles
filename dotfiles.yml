@@ -37,6 +37,9 @@
     - role: ruby
       tags:
         - ruby
+    - role: erlang
+      tags:
+        - erlang
     - role: elixir
       tags:
         - elixir
