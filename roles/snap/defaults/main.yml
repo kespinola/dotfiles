@@ -1,6 +1,6 @@
 snaps:
-- kubectl
-- mailspring
-- slack
 - spotify
 - vscode
+- telegram-desktop
+- skype
+- sublime-text

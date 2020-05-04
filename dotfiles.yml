@@ -19,33 +19,9 @@
     - role: vim
       tags:
         - vim
-    - role: tmux
-      tags:
-        - tmux
-    - role: asdf
-      tags:
-        - asdf
     - role: python
       tags:
         - python
-    - role: terraform
-      tags:
-        - terraform
-    - role: golang
-      tags:
-        - golang
-    - role: ruby
-      tags:
-        - ruby
-    - role: erlang
-      tags:
-        - erlang
-    - role: elixir
-      tags:
-        - elixir
-    - role: node
-      tags:
-        - node
     - role: redis
       tags:
         - redis
