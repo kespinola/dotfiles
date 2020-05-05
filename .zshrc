@@ -62,6 +62,7 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  aws
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -96,33 +97,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# Anaconda to path
 export PATH="/home/dinko/anaconda3/bin:$PATH"
-
-# Snap to path
 export PATH="/snap/bin:$PATH"
-
-# Alias for spotify to run in the bg
-alias spotify="nohup spotify &>/dev/null &; disown;" 
-
-# SSH connection to Raspberry Pi
-alias rpissh="ssh pi@192.168.1.91"
-
-# Pycharm path and alias
-export PATH="/opt/pycharm-community-2018.2.1/bin:$PATH"
-alias pycharm='pycharm.sh &; disown;'
-
-# Chomper (Internet blocker)
-alias chomper='~/chomper/bin/chomper'
-
-
-# conda aliases
-alias activate='source activate'
-
-
 export PYTHONPATH="${PYTHONPATH}:/home/dinko/anaconda3/lib/python3.6/site-packages/cv2"
 
-alias gesture='cd ~/Projects/gesture-recognition/gesture_recognition'
-
-# "-sel clip" to paste to the system clipboard because the default is the mouse clipboard
-alias rpipass='keyring get rpi pi | xclip -sel clip'
+source $HOME/.dotfiles/roles/zsh/aliases.zsh
+source $HOME/.dotfiles/roles/zsh/completion.zsh
+source $HOME/.dotfiles/roles/zsh/config.zsh
+source $HOME/.dotfiles/roles/zsh/env.zsh
+source $HOME/.dotfiles/roles/zsh/path.zsh
