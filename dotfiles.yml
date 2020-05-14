@@ -19,9 +19,6 @@
     - role: vim
       tags:
         - vim
-    - role: python
-      tags:
-        - python
     - role: redis
       tags:
         - redis
