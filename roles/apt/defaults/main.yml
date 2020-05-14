@@ -12,7 +12,6 @@ packages:
   - vim
   - xclip
   - bat
-  - git-flow
 
   # GUI
   - chromium-browser
