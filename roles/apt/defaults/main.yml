@@ -3,8 +3,6 @@ packages:
   - ansible
   - build-essential
   - curl
-  - docker-compose
-  - docker.io
   - fzf
   - htop
   - jq
