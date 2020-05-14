@@ -1,6 +1,6 @@
 snaps:
-- spotify
-- vscode
-- telegram-desktop
-- skype
-- sublime-text
+  - spotify
+  - vscode
+  - telegram-desktop
+  - skype
+  - sublime-text
