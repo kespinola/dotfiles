@@ -22,13 +22,14 @@
     creates: "{{dotfiles_user_home}}/.zshrc.bak"
   when: zshrc_stat.stat.exists
 
-- name: Remove .zshrc
-  command: rm ~/.zshrc
-  when: zshrc_stat.stat.exists
-
-
 - name: Symlink .zshrc
   file:
     src: "{{ dotfiles_home }}/roles/zsh/files/zshrc"
     dest: "{{dotfiles_user_home}}/.zshrc"
     state: link
+
+- name: Set zsh as the default shell
+  command: "chsh -s \"$(which zsh)\""
+  become: yes
+  become_user: root
+  become_method: sudo

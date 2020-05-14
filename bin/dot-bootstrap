@@ -15,7 +15,7 @@ if ! [ -x "$(command -v ansible)" ]; then
 fi
 
 # Use --check for a dry run and --syntax-check for pizza delivery
-ansible-playbook -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --ask-become-pass --tags $tags --check
+ansible-playbook -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --ask-become-pass --tags $tags 
 
 if command -v terminal-notifier 1>/dev/null 2>&1; then
   terminal-notifier -title "dotfiles: Bootstrap complete" -message "Successfully set up dev environment."

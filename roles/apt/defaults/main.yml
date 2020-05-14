@@ -3,7 +3,6 @@ packages:
   - ansible
   - build-essential
   - curl
-  - fzf
   - htop
   - jq
   - make
@@ -11,7 +10,6 @@ packages:
   - zip
   - vim
   - xclip
-  - bat
 
   # GUI
   - chromium-browser

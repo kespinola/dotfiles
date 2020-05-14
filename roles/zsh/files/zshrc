@@ -1,3 +1,6 @@
+# To solve the "Insecure completion-dependent directories detected" issue
+ZSH_DISABLE_COMPFIX=true
+
 # If you come from bash you might have to change your $PATH.
 #export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -101,9 +104,9 @@ export PATH="/home/dinko/anaconda3/bin:$PATH"
 export PATH="/snap/bin:$PATH"
 export PYTHONPATH="${PYTHONPATH}:/home/dinko/anaconda3/lib/python3.6/site-packages/cv2"
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
+# source /usr/share/doc/fzf/examples/key-bindings.zsh
 # Use rg to respect .gitignore
-export FZF_DEFAULT_COMMAND='rg --hidden --ignore .git -g ""'
+# export FZF_DEFAULT_COMMAND='rg --hidden --ignore .git -g ""'
 
 
 source $HOME/.dotfiles/roles/zsh/aliases.zsh
