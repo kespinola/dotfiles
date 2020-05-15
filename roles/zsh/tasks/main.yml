@@ -28,8 +28,14 @@
     dest: "{{dotfiles_user_home}}/.zshrc"
     state: link
 
-- name: Powerlevel9k theme installation
-  raw: "git clone https://github.com/romkatv/powerlevel10k.git  ~/.oh-my-zsh/custom/themes/powerlevel10k"
+# - name: Powerlevel9k theme installation
+  # raw: "git clone https://github.com/romkatv/powerlevel10k.git  ~/.oh-my-zsh/custom/themes/powerlevel10k"
+
+- name: Symlink .p10k.zsh
+  file:
+    src: "{{ dotfiles_home }}/roles/zsh/files/p10k.zsh"
+    dest: "{{dotfiles_user_home}}/.p10k.zsh"
+    state: link
 
 - name: Set zsh as the default shell
   command: "chsh -s \"$(which zsh)\""
