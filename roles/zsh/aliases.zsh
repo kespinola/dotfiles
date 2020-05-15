@@ -14,7 +14,7 @@ alias spotify="nohup spotify &>/dev/null &; disown;"
 alias rpissh="ssh pi@192.168.1.91"
 
 # conda aliases
-alias activate='source activate'
+alias act='source activate'
 
 # "-sel clip" to paste to the system clipboard because the default is the mouse clipboard
 alias rpipass='keyring get rpi pi | xclip -sel clip'

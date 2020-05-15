@@ -1,6 +1,18 @@
 # To solve the "Insecure completion-dependent directories detected" issue
 ZSH_DISABLE_COMPFIX=true
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+
+# Initialization code that may require console input (password prompts, [y/n]
+
+# confirmations, etc.) must go above this block, everything else may go below.
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+
+fi
+
 # If you come from bash you might have to change your $PATH.
 #export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -11,8 +23,10 @@ export ZSH=/home/dinko/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
-#ZSH_THEME="robbyrussell"
 
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+POWERLEVEL9K_MODE="awesome-patched"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -99,18 +113,36 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Powerlevel10k configurations
 
-export PATH="/home/dinko/anaconda3/bin:$PATH"
-export PATH="/snap/bin:$PATH"
-export PYTHONPATH="${PYTHONPATH}:/home/dinko/anaconda3/lib/python3.6/site-packages/cv2"
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+
+POWERLEVEL9K_SHORTEN_DELIMITER=".."
+
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(direnv virtualenv anaconda pyenv goenv nodenv nvm nodeenv \
+
+rbenv rvm fvm kubecontext terraform aws context nordvpn ranger vim_shell vi_mode \
+
+status dir)
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time)
+
+
 
 # source /usr/share/doc/fzf/examples/key-bindings.zsh
 # Use rg to respect .gitignore
 # export FZF_DEFAULT_COMMAND='rg --hidden --ignore .git -g ""'
 
 
+# Other configurations
+
 source $HOME/.dotfiles/roles/zsh/aliases.zsh
 source $HOME/.dotfiles/roles/zsh/completion.zsh
 source $HOME/.dotfiles/roles/zsh/config.zsh
 source $HOME/.dotfiles/roles/zsh/env.zsh
 source $HOME/.dotfiles/roles/zsh/path.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
