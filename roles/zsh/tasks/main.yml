@@ -28,8 +28,8 @@
     dest: "{{dotfiles_user_home}}/.zshrc"
     state: link
 
-# - name: Powerlevel9k theme installation
-  # raw: "git clone https://github.com/romkatv/powerlevel10k.git  ~/.oh-my-zsh/custom/themes/powerlevel10k"
+- name: Powerlevel10k theme installation
+  raw: "git clone https://github.com/romkatv/powerlevel10k.git  ~/.oh-my-zsh/custom/themes/powerlevel10k"
 
 - name: Symlink .p10k.zsh
   file:
