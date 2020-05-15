@@ -18,3 +18,6 @@ alias act='source activate'
 
 # "-sel clip" to paste to the system clipboard because the default is the mouse clipboard
 alias rpipass='keyring get rpi pi | xclip -sel clip'
+
+
+alias cat='bat'

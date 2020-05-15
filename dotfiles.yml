@@ -16,3 +16,4 @@
     - role: redis
       tags:
         - redis
+    - aeimer.install_bat
