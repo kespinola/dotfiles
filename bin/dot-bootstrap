@@ -14,13 +14,18 @@ if ! [ -x "$(command -v ansible)" ]; then
   sudo apt install ansible
 fi
 
-if [ ! -f "~/$USER/.ansible/roles/aeimer.install_bat"]; then
+if [ ! -f "~/$USER/.ansible/roles/aeimer.install_bat" ]; then
   ansible-galaxy install aeimer.install_bat
 fi
 
 # Use --check for a dry run and --syntax-check for pizza delivery
-# ansible-playbook -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --ask-become-pass --tags $tags 
+ansible-playbook -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --ask-become-pass --tags $tags 
 
 if command -v terminal-notifier 1>/dev/null 2>&1; then
   terminal-notifier -title "dotfiles: Bootstrap complete" -message "Successfully set up dev environment."
 fi
+
+# Because fzf can be installed with apt from the next version of ubuntu it is installed manually
+# by cloning from git and running the below command. It isn't possible to do it with ansible,
+# since, when installing, you need set some parameters via yes/no questions
+echo "To install fzf run '~/.fzf/install'"

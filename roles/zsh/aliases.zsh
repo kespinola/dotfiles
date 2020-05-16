@@ -21,3 +21,13 @@ alias rpipass='keyring get rpi pi | xclip -sel clip'
 
 
 alias cat='bat'
+
+# preview files while searching
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+# add support for ctrl+o to open selected file in VS Code
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
+
+# fzf good to know
+# CTRL-T - Paste the selected files and directories onto the command-line
+# CTRL-R - Paste the selected command from history onto the command-line
+# ALT-C - cd into the selected directory 

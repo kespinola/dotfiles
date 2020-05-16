@@ -131,7 +131,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time)
 
 
 
-# source /usr/share/doc/fzf/examples/key-bindings.zsh
 # Use rg to respect .gitignore
 # export FZF_DEFAULT_COMMAND='rg --hidden --ignore .git -g ""'
 
@@ -146,3 +145,5 @@ source $HOME/.dotfiles/roles/zsh/path.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

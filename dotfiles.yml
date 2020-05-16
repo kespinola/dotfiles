@@ -16,4 +16,7 @@
     - role: redis
       tags:
         - redis
+    - role: tools
+      tags:
+        - tools
     - aeimer.install_bat
