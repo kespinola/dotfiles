@@ -4,5 +4,8 @@
     dest: ~/.fzf
     depth: 1
 
-- name: Install fzf
-  command: ~/.fzf/install
+- name: Download diff-so-fancy
+  git:
+    repo: https://github.com/so-fancy/diff-so-fancy.git
+    dest: ~/opt/diff-so-fancy
+    depth: 1
