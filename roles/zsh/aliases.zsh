@@ -19,6 +19,9 @@ alias act='source activate'
 # "-sel clip" to paste to the system clipboard because the default is the mouse clipboard
 alias rpipass='keyring get rpi pi | xclip -sel clip'
 
+##
+# Use a \ before a command to run the original one
+##
 
 alias cat='bat'
 
@@ -31,3 +34,12 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 # CTRL-T - Paste the selected files and directories onto the command-line
 # CTRL-R - Paste the selected command from history onto the command-line
 # ALT-C - cd into the selected directory 
+
+alias help='tldr'
+
+# fd good to know
+# fd cli # all filenames containing "cli"
+# fd -e md # all with .md extension
+# fd cli -x wc -w # find "cli" and run `wc -w` on each file
+
+alias top="sudo htop"
