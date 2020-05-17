@@ -10,7 +10,6 @@ packages:
   - zip
   - vim
   - xclip
-  - fd-find
   - silversearcher-ag
 
   # GUI

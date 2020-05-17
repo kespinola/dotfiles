@@ -9,3 +9,19 @@
     repo: https://github.com/so-fancy/diff-so-fancy.git
     dest: ~/opt/diff-so-fancy
     depth: 1
+
+- name: Install tldr with npm
+  npm: 
+    name: tldr
+    global: yes
+  become: yes
+  become_user: root
+  become_method: sudo
+
+- name: Install fd with npm
+  npm: 
+    name: fd-find
+    global: yes
+  become: yes
+  become_user: root
+  become_method: sudo
