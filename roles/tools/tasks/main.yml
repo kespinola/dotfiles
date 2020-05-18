@@ -25,3 +25,7 @@
   become: yes
   become_user: root
   become_method: sudo
+
+- name: Install vscode extensions
+  command: code --install-extension "{{ item }}"
+  loop: "{{ extensions }}"

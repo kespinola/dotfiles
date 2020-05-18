@@ -1,0 +1,12 @@
+extensions:
+  - eamodio.gitlens
+  - GitHub.vscode-pull-request-github
+  - johnpapa.vscode-peacock
+  - karigari.chat
+  - ms-azuretools.vscode-docker
+  - ms-python.python
+  - ms-vsliveshare.vsliveshare
+  - ms-vsliveshare.vsliveshare-audio
+  - ms-vsliveshare.vsliveshare-pack
+  - redhat.vscode-yaml
+  - vscodevim.vim
