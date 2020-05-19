@@ -29,3 +29,15 @@
 - name: Install vscode extensions
   command: code --install-extension "{{ item }}"
   loop: "{{ extensions }}"
+
+- name: Symlink VSCode keybindings
+  file:
+    src: "{{ dotfiles_home }}/roles/tools/files/keybindings.json"
+    dest: "{{ dotfiles_user_home }}/.config/Code/User/keybindings.json"
+    state: link
+
+- name: Symlink VSCode settings
+  file:
+    src: "{{ dotfiles_home }}/roles/tools/files/settings.json"
+    dest: "{{ dotfiles_user_home }}/.config/Code/User/settings.json"
+    state: link
