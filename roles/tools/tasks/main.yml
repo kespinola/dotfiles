@@ -41,3 +41,34 @@
     src: "{{ dotfiles_home }}/roles/tools/files/settings.json"
     dest: "{{ dotfiles_user_home }}/.config/Code/User/settings.json"
     state: link
+
+- name: Check for .vimrc
+  stat: path="{{dotfiles_user_home}}/.vimrc"
+  register: vimrc_stat
+
+- name: Download badwolf theme
+  git:
+    repo: https://github.com/sjl/badwolf.git
+    dest: ~/opt/badwolf
+    depth: 1
+
+- name: Create .vim/colours directory
+  file:
+    path: "{{dotfiles_user_home}}/.vim/colors"
+    state: directory
+    mode: '0755'
+
+- name: Install Badwolf theme
+  shell: mv ~/opt/badwolf/colors/*.vim ~/.vim/colors
+
+- name: Back up .vimrc
+  command: mv ~/.vimrc ~/.vimrc.bak
+  args:
+    creates: "{{dotfiles_user_home}}/.vimrc.bak"
+  when: vimrc_stat.stat.exists
+
+- name: Vimrc Symlink
+  file:
+    src: "{{ dotfiles_home }}/roles/tools/files/vimrc"
+    dest: "{{ dotfiles_user_home }}/.vimrc"
+    state: link
