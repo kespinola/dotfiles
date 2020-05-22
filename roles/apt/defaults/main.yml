@@ -11,6 +11,7 @@ packages:
   - vim
   - xclip
   - silversearcher-ag
+  - npm
 
   # GUI
   - chromium-browser
