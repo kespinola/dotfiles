@@ -10,3 +10,4 @@ extensions:
   - ms-vsliveshare.vsliveshare-pack
   - redhat.vscode-yaml
   - vscodevim.vim
+  - njpwerner.autodocstring
