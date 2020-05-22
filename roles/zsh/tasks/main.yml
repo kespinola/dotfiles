@@ -45,3 +45,5 @@
   become: yes
   become_user: root
   become_method: sudo
+  register: command_result
+  failed_when: command_result.rc != 0 or "'PAM:' not in command_result.stderr"
