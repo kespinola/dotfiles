@@ -1,3 +1,4 @@
+# Inspired by https://gggritso.com/human-git-aliases
 [hub]
         protocol = https
 [user]
@@ -8,15 +9,54 @@
         st = status
         s = status
         co = checkout
-        cob = checkout -b
         c = checkout
-        ci = commit
-        noff = merge --no-ff
-        plr = pull --rebase
-        amend = commit --amend
-        wip = commit --no-verify -am "WIP"
-        br = branch
-        rn = branch -m
+
+        discard = checkout --
+        save = commit -m
+        resave = commit --amend -m
+        uncommit = reset --mixed HEAD~
+        nevermind = !git reset --hard HEAD && git clean -d -f
+
+        fold = commit --amend --no-edit
+        last = log -1 HEAD --format=format:"%Cred%H"
+        copy-last-hash = !git last | pbcopy
+        summary = status -u -s
+        contributors = shortlog -s -n --no-merges
+        file-trail = log --follow -p -w
+        merge-trail = log --ancestry-path --merges
+        unmerged-files = diff --name-only
+
+        graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %ar) %Cred%d' --date-order
+        history = log -10 --format=format:'%Cgreen%h %Creset%s (%aN, %ar)'
+        new-branch = checkout -b
+        rename-branch = branch -m
+        delete-branch = branch -D
+        branches = "!git branch | ag -v '\\b(staging|master)\\b'"
+        recent-branches = branch -a --sort=committerdate
+        current-branch = rev-parse --abbrev-ref HEAD
+
+        tags = tag
+        stashes = stash list
+        prestage = diff -w
+        precommit = diff -w --cached
+        remotes = remote -v
+        
+        show-last = show HEAD
+        untrack = rm -r --cached
+        rewrite = rebase -i
+
+        aliases = !git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\:\\ /
+        autotrack = "!f() { B=$(git current-branch); git branch --set-upstream-to=origin/$B; }; f"
+        into = "!f() { B=$(git current-branch); git checkout $1; git pull; git merge $B --no-edit; }; f"
+        into-staging = "!f() { B=$(git current-branch); git checkout staging; git pull; git merge $B --no-edit; }; f"
+        into-master = "!f() { B=$(git current-branch); git checkout master; git pull; git merge $B --no-edit; }; f"
+        onto = "!f() { B=$(git current-branch); git checkout master; git pull; git checkout $B; git rebase -i $1; }; f"
+        work-log = !git log --reverse master...HEAD --format=format:'- %w(0,0,4)%B'
+        submit = !git push && git autotrack
+        whodunit = blame -wMC
+        axe = log --reverse -p -w -S
+
+
         # diff-so-fancy
         # https://github.com/so-fancy/diff-so-fancy/#usage
         df = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
