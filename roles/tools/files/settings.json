@@ -1,3 +1,4 @@
 {
-    "keyboard.dispatch": "keyCode"
+    "keyboard.dispatch": "keyCode",
+    "window.zoomLevel": 2
 }

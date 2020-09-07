@@ -80,6 +80,7 @@ POWERLEVEL9K_MODE="awesome-patched"
 plugins=(
   git
   aws
+  poetry
 )
 
 source $ZSH/oh-my-zsh.sh

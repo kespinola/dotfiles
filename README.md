@@ -6,7 +6,6 @@ Configure linux workstation using Ansible.
 
 - fzf
 - git
-- tmux
 - vim
 - zsh
 

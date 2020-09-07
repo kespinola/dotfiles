@@ -40,6 +40,20 @@
     dest: "{{dotfiles_user_home}}/.p10k.zsh"
     state: link
 
+- name: Check for zsh poetry plugin dir
+  stat: path="{{dotfiles_user_home}}/.oh-my-zsh/plugins/poetry"
+  register: zsh_plugin_poetry_stat
+
+- name: Make Poetry completions dir
+  file: 
+    path: $ZSH/plugins/poetry
+    state: directory
+  when: not zsh_plugin_poetry_stat.stat.exists
+
+- name: Poetry completions installation
+  shell: poetry completions zsh > $ZSH/plugins/poetry/_poetry
+  when: not zsh_plugin_poetry_stat.stat.exists
+
 - name: Set zsh as the default shell
   command: "chsh -s \"$(which zsh)\""
   become: yes
