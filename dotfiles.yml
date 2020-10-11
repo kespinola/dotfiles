@@ -10,13 +10,13 @@
     - role: snap
       tags:
         - snap
-    - role: zsh
-      tags:
-        - zsh
     - role: redis
       tags:
         - redis
     - role: tools
       tags:
         - tools
+    - role: zsh
+      tags:
+        - zsh
     - aeimer.install_bat
