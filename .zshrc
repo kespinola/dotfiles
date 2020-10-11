@@ -63,6 +63,7 @@ ZSH_THEME="agnoster"
 plugins=(
   git
   aws
+  poetry
 )
 
 source $ZSH/oh-my-zsh.sh
