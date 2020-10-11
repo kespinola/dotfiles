@@ -1,5 +1,6 @@
 dotfiles_user_home: "{{ '~' | expanduser }}"
 dotfiles_home: "{{ dotfiles_user_home }}/.dotfiles"
+zsh_custom: "{{ dotfiles_user_home }}/.oh-my-zsh/custom"
 
 full_name: Dinko Lubina
 git_user: dinkolubina
