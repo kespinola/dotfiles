@@ -12,6 +12,7 @@ if ! [ -x "$(command -v ansible)" ]; then
   sudo apt install software-properties-common
   sudo apt-add-repository --yes --update ppa:ansible/ansible
   sudo apt install ansible
+  ansible-galaxy collection install community.general
 fi
 
 if [ ! -f "~/$USER/.ansible/roles/aeimer.install_bat" ]; then

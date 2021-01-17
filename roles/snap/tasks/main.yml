@@ -1,8 +1,8 @@
 - name: Install snap packages
-  snap:
+  community.general.snap:
     name: "{{ item }}"
     classic: yes
   become: yes
   become_user: root
   become_method: sudo
-  loop: "{{ snaps }}"
+  loop: "{{ snap }}"
