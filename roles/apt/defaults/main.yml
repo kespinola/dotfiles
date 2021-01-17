@@ -12,6 +12,7 @@ packages:
   - xclip
   - silversearcher-ag
   - npm
+  - git-flow
 
   # GUI
   - chromium-browser
