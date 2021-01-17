@@ -46,11 +46,16 @@
   stat: path="{{dotfiles_user_home}}/.vimrc"
   register: vimrc_stat
 
+- name: Check for badwolf theme
+  stat: path="~/opt/badwolf"
+  register: badwolf_theme
+
 - name: Download badwolf theme
   git:
     repo: https://github.com/sjl/badwolf.git
     dest: ~/opt/badwolf
     depth: 1
+  when: not badwolf_theme.stat.exists
 
 - name: Create .vim/colours directory
   file:
