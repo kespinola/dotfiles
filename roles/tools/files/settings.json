@@ -1,5 +1,9 @@
 {
     "keyboard.dispatch": "keyCode",
     "window.zoomLevel": 1,
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "redhat.telemetry.enabled": true
 }
