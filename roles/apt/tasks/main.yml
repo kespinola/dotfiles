@@ -52,3 +52,8 @@
 - name: Add custom Regolith config settings
   command: "cat {{ dotfiles_home }}/roles/apt/files/config >> {{ dotfiles_user_home}}/.config/regolith/i3/config"
   when: basic_regolith_config.stat.exists
+
+- name: Link fd-find as fd
+  command: "ln -s $(which fdfind) ~/.local/bin/fd"
+  args:
+    creates: "~/.local/bin/fd"
