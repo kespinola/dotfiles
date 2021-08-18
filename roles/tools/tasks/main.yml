@@ -17,6 +17,7 @@
   become: yes
   become_user: root
   become_method: sudo
+  when: not ansible_check_mode
 
 - name: Install fd with npm
   npm: 
@@ -25,6 +26,7 @@
   become: yes
   become_user: root
   become_method: sudo
+  when: not ansible_check_mode
 
 - name: Install vscode extensions
   command: code --install-extension "{{ item }}"

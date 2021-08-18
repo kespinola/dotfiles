@@ -6,6 +6,7 @@
   become: yes
   become_user: root
   become_method: sudo
+  when: not ansible_check_mode
 
 - name: Check for redis server
   register: redis_running
@@ -16,4 +17,6 @@
   become: yes
   become_user: root
   become_method: sudo
-  when: redis_running == 3
+  when: 
+  - redis_running == 3
+  - not ansible_check_mode

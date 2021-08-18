@@ -3,6 +3,7 @@
   become: yes
   become_user: root
   become_method: sudo
+  when: not ansible_check_mode
 
 - name: Link global gitignore file
   file:

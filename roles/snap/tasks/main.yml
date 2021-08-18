@@ -6,3 +6,4 @@
   become_user: root
   become_method: sudo
   loop: "{{ snap }}"
+  when: not ansible_check_mode

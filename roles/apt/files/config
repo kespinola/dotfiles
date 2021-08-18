@@ -1,0 +1,39 @@
+################
+# Custom setup #
+################
+
+# Path to config file
+# ~/.config/regolith/i3/config
+
+# Start apps upon startup
+
+# Reference for assigning windows to workspaces:
+# https://i3wm.org/docs/userguide.html#assign_workspace
+exec --no-startup-id i3-msg 'exec 1password' 
+exec --no-startup-id i3-msg 'exec spotify' 
+exec --no-startup-id i3-msg 'exec lotion'
+exec --no-startup-id i3-msg 'exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'exec gnome-terminal' 
+exec --no-startup-id i3-msg 'exec code'
+
+# Move windows to specific workspaces
+
+assign [class="1Password"] → "1: 1 Other" 
+assign [class="Spotify"] → "1: 1 Other"
+assign [class="Lotion"] → "2: 2 Notion" 
+assign [class="Gnome-terminal"] → "3: 3 Terminal" 
+assign [class="Firefox"] → "4: 4 Browser"
+assign [class="Code"] → "5: 5 Code"
+
+# Move workspaces to specific screens
+
+# Screens
+# eDp # Laptop screen
+# DP-1-2-8 # Primary screen
+# DP-1-1
+
+workspace "1: 1 Other" output DP-1-1
+workspace "2: 2 Notion" output DP-1-2-8
+workspace "3: 3 Terminal" output DP-1-1
+workspace "4: 4 Browser" output DP-1-1
+workspace "5: 5 Code"  output DP-1-2-8
