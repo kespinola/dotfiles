@@ -3,6 +3,7 @@
   become: yes
   become_user: root
   become_method: sudo
+  when: not ansible_check_mode
 
 - name: Check for oh-my-zsh installation
   stat: "path=~/.oh-my-zsh"
@@ -61,3 +62,4 @@
   become_method: sudo
   register: command_result
   failed_when: command_result.rc != 0 or "'PAM:' not in command_result.stderr"
+  when: not ansible_check_mode

@@ -20,7 +20,16 @@ if [ ! -f "~/$USER/.ansible/roles/aeimer.install_bat" ]; then
 fi
 
 # Use --check for a dry run and --syntax-check for pizza delivery
-ansible-playbook -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --ask-become-pass --tags $tags 
+if [ $tags = "dry-run" ]; then
+  echo "Dry run started"
+  ansible-playbook -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --check
+elif [ $tags = "syntax-check" ]; then
+  echo "Syntax check started"
+  ansible-playbook -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --syntax-check
+else
+  ansible-playbook -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --ask-become-pass --tags $tags 
+fi
+
 
 if command -v terminal-notifier 1>/dev/null 2>&1; then
   terminal-notifier -title "dotfiles: Bootstrap complete" -message "Successfully set up dev environment."

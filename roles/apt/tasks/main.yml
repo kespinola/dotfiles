@@ -1,9 +1,15 @@
 - name: Upgrade apt
   apt: upgrade=yes
-  when: package_upgrade
+  when: 
+    - not ansible_check_mode
+    - package_upgrade
   become: yes
   become_user: root
   become_method: sudo
+
+- apt_repository:
+    repo: ppa:regolith-linux/release
+    state: present
 
 - name: Install apt packages
   apt:
@@ -13,6 +19,8 @@
   become_user: root
   become_method: sudo
   loop: "{{ packages }}"
+  when: not ansible_check_mode
+
 
 - name: Remove apt packages
   apt:
@@ -23,3 +31,24 @@
   become_user: root
   become_method: sudo
   loop: "{{ remove_packages }}"
+  when: not ansible_check_mode
+
+- name: Add custom Regolith Xresources
+  file:
+    src: "{{ dotfiles_home }}/roles/apt/files/Xresources"
+    dest: "{{ dotfiles_user_home }}/.config/regolith/Xresources"
+    state: link
+
+- name: Check for presence of the custom Regolith config
+  stat: path="{{ dotfiles_user_home }}/.config/regolith/i3/config"
+  register: basic_regolith_config
+
+- name: Copy basic Regolith config file
+  command: "cp /etc/regolith/i3/config {{ dotfiles_user_home }}/.config/regolith/i3/config"
+  args:
+    creates: "{{ dotfiles_user_home }}/.config/regolith/i3/config"
+  when: not basic_regolith_config.stat.exists
+
+- name: Add custom Regolith config settings
+  command: "cat {{ dotfiles_home }}/roles/apt/files/config >> {{ dotfiles_user_home}}/.config/regolith/i3/config"
+  when: basic_regolith_config.stat.exists
