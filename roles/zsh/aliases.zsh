@@ -29,17 +29,13 @@ alias cat='bat'
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 # add support for ctrl+o to open selected file in VS Code
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
-
-# fzf good to know
-# CTRL-T - Paste the selected files and directories onto the command-line
-# CTRL-R - Paste the selected command from history onto the command-line
-# ALT-C - cd into the selected directory 
+# Using highlight (http://www.andre-simon.de/doku/highlight/en/highlight.html)
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 
 alias help='tldr'
 
-# fd good to know
-# fd cli # all filenames containing "cli"
-# fd -e md # all with .md extension
-# fd cli -x wc -w # find "cli" and run `wc -w` on each file
 
 alias top="sudo htop"
+
+alias shortcuts="bat /home/dinko/.dotfiles/roles/zsh/keyboard_shortcuts.zsh"
+alias gitf="git aliases | fzf"
