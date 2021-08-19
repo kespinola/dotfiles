@@ -34,8 +34,3 @@ fi
 if command -v terminal-notifier 1>/dev/null 2>&1; then
   terminal-notifier -title "dotfiles: Bootstrap complete" -message "Successfully set up dev environment."
 fi
-
-# Because fzf can be installed with apt from the next version of ubuntu it is installed manually
-# by cloning from git and running the below command. It isn't possible to do it with ansible,
-# since, when installing, you need set some parameters via yes/no questions
-echo "To install fzf run '~/.fzf/install'"
