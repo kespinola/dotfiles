@@ -38,4 +38,5 @@ alias help='tldr'
 alias top="sudo htop"
 
 alias shortcuts="bat /home/dinko/.dotfiles/roles/zsh/keyboard_shortcuts.zsh"
-alias gitf="git aliases | fzf"
+
+export gitf () {search_result=$(git aliases | fzf | awk '{print substr($1, 1, length($1)-1)}'); if [[ -z $search_result ]]; then :; else eval 'git '$search_result; fi}
