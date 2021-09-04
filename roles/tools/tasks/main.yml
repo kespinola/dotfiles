@@ -13,15 +13,6 @@
   become_method: sudo
   when: not ansible_check_mode
 
-- name: Install fd with npm
-  npm: 
-    name: fd-find
-    global: yes
-  become: yes
-  become_user: root
-  become_method: sudo
-  when: not ansible_check_mode
-
 - name: Install vscode extensions
   command: code --install-extension "{{ item }}"
   loop: "{{ extensions }}"

@@ -13,6 +13,7 @@ packages:
   - silversearcher-ag
   - npm
   - git-flow
+  - fd-find
 
   # GUI
   - chromium-browser
