@@ -49,6 +49,8 @@
     creates: "{{ dotfiles_user_home }}/.config/regolith/i3/config"
   when: not basic_regolith_config.stat.exists
 
-- name: Add custom Regolith config settings
-  command: "cat {{ dotfiles_home }}/roles/apt/files/config >> {{ dotfiles_user_home}}/.config/regolith/i3/config"
-  when: basic_regolith_config.stat.exists
+- name: Link additional config settings
+  blockinfile:
+    block: "{{ lookup('file', '~/.dotfiles/roles/apt/files/config') }}"
+    path: "{{ dotfiles_user_home }}/.config/regolith/i3/config"
+    
