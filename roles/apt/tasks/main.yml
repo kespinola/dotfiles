@@ -33,6 +33,17 @@
   loop: "{{ remove_packages }}"
   when: not ansible_check_mode
 
+- name: Create ~/.local/bin directory for bat
+  file:
+    path: "{{ dotfiles_user_home }}/.local/bin"
+    state: directory
+
+- name: Add bat symlink to repoint from batcat
+  file:
+    src: "/usr/bin/batcat"
+    dest: "{{ dotfiles_user_home }}/.local/bin/bat"
+    state: link
+
 - name: Add custom Regolith Xresources
   file:
     src: "{{ dotfiles_home }}/roles/apt/files/Xresources"

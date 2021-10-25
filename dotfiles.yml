@@ -19,4 +19,3 @@
     - role: zsh
       tags:
         - zsh
-    - aeimer.install_bat
