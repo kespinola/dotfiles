@@ -15,6 +15,7 @@ packages:
   - git-flow
   - fd-find
   - bat
+  - fzf
 
   # GUI
   - chromium-browser
