@@ -14,6 +14,7 @@ packages:
   - npm
   - git-flow
   - fd-find
+  - bat
 
   # GUI
   - chromium-browser
