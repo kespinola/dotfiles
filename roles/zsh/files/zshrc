@@ -144,16 +144,12 @@ source $HOME/.dotfiles/roles/zsh/completion.zsh
 source $HOME/.dotfiles/roles/zsh/config.zsh
 source $HOME/.dotfiles/roles/zsh/env.zsh
 source $HOME/.dotfiles/roles/zsh/path.zsh
+source $HOME/.dotfiles/roles/zsh/fzf_config.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-# Enable fzf keybindings for Zsh
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-
-# Enable fuzzy auto-completion for Zsh
-source /usr/share/doc/fzf/examples/completion.zsh
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
