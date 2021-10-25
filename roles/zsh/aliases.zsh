@@ -27,10 +27,6 @@ alias cat='bat'
 
 # preview files while searching
 alias preview="fzf --preview 'bat --color \"always\" {}'"
-# add support for ctrl+o to open selected file in VS Code
-export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
-# Using highlight (http://www.andre-simon.de/doku/highlight/en/highlight.html)
-export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 
 alias help='tldr'
 
