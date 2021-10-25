@@ -15,10 +15,6 @@ if ! [ -x "$(command -v ansible)" ]; then
   ansible-galaxy collection install community.general
 fi
 
-if [ ! -f "~/$USER/.ansible/roles/aeimer.install_bat" ]; then
-  ansible-galaxy install aeimer.install_bat
-fi
-
 # Use --check for a dry run and --syntax-check for pizza delivery
 if [ $tags = "dry-run" ]; then
   echo "Dry run started"
