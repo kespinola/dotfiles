@@ -16,6 +16,7 @@ packages:
   - fd-find
   - bat
   - fzf
+  - neofetch
 
   # GUI
   - chromium-browser
