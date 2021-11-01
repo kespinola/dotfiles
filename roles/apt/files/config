@@ -16,15 +16,6 @@ exec --no-startup-id i3-msg 'exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'exec gnome-terminal' 
 exec --no-startup-id i3-msg 'exec code'
 
-# Move windows to specific workspaces
-
-assign [class="1Password"] → "1: 1 Other" 
-assign [class="Spotify"] → "1: 1 Other"
-assign [class="Lotion"] → "2: 2 Notion" 
-assign [class="Gnome-terminal"] → "3: 3 Terminal" 
-assign [class="Firefox"] → "4: 4 Browser"
-assign [class="Code"] → "5: 5 Code"
-
 # Move workspaces to specific screens
 
 # Screens
