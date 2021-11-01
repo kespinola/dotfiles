@@ -38,3 +38,5 @@ alias shortcuts="bat /home/dinko/.dotfiles/roles/zsh/keyboard_shortcuts.zsh"
 export gitf () {search_result=$(git aliases | fzf | awk '{print substr($1, 1, length($1)-1)}'); if [[ -z $search_result ]]; then :; else eval 'git '$search_result; fi}
 
 alias move-ws="sudo i3 move workspace to output"
+
+alias sys-info="neofetch"
