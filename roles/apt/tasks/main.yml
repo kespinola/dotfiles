@@ -64,4 +64,8 @@
   blockinfile:
     block: "{{ lookup('file', '~/.dotfiles/roles/apt/files/config') }}"
     path: "{{ dotfiles_user_home }}/.config/regolith/i3/config"
-    
+
+- name: Link fdfind to fd
+  file:
+    src: "/usr/bin/fdfind"
+    dest: "{{ dotfiles_user_home }}/.local/bin/fd"
