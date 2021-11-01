@@ -1,15 +1,15 @@
-################
-# Custom setup #
-################
+!###############
+! Custom setup #
+!###############
 
-# Path to Xresources file
-# ~/.config/regolith/Xresources
+! Path to Xresources file
+! ~/.config/regolith/Xresources
 
-# Move bar position to top
+! Move bar position to top
 i3-wm.bar.position: top
 
-# Name workspaces
-i3-wm.workspace.01.name: 1: 1 Other
+! Name workspaces
+i3-wm.workspace.01.name: 1: 1 Misc
 i3-wm.workspace.02.name: 2: 2 Notion
 i3-wm.workspace.03.name: 3: 3 Terminal
 i3-wm.workspace.04.name: 4: 4 Browser
