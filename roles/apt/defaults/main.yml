@@ -17,6 +17,7 @@ packages:
   - bat
   - fzf
   - neofetch
+  - tree
 
   # GUI
   - chromium-browser
