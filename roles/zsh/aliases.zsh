@@ -1,3 +1,7 @@
+####################################################
+# Use a \ before a command to run the original one #
+####################################################
+
 alias cl="clear"
 alias pg='ps -ef | grep'
 alias pkill!="pkill -9 -f "
@@ -19,10 +23,6 @@ alias act='source activate'
 # "-sel clip" to paste to the system clipboard because the default is the mouse clipboard
 alias rpipass='keyring get rpi pi | xclip -sel clip'
 
-##
-# Use a \ before a command to run the original one
-##
-
 alias cat='bat'
 
 # preview files while searching
@@ -30,6 +30,7 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 
 alias help='tldr'
 
+export treeL () {tree -L $1}
 
 alias top="sudo htop"
 
