@@ -50,10 +50,12 @@
     path: $ZSH/plugins/poetry
     state: directory
   when: not zsh_plugin_poetry_stat.stat.exists
+  when: ansible_check_mode
 
 - name: Poetry completions installation
   shell: poetry completions zsh > $ZSH/plugins/poetry/_poetry
   when: not zsh_plugin_poetry_stat.stat.exists
+  when: ansible_check_mode
 
 - name: Set zsh as the default shell
   command: "chsh -s \"$(which zsh)\""
