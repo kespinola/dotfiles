@@ -149,7 +149,6 @@ source $HOME/.dotfiles/roles/zsh/config.zsh
 source $HOME/.dotfiles/roles/zsh/env.zsh
 source $HOME/.dotfiles/roles/zsh/path.zsh
 source $HOME/.dotfiles/roles/zsh/fzf_config.zsh
-source $HOME/.dotfiles/roles/zsh/tink_specific.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
