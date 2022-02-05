@@ -1,9 +1,10 @@
 {
     "keyboard.dispatch": "keyCode",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 2,
     "files.autoSave": "afterDelay",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
     },
-    "redhat.telemetry.enabled": true
+    "redhat.telemetry.enabled": true,
+    "workbench.colorTheme": "Dracula"
 }
