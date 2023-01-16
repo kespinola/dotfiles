@@ -7,13 +7,6 @@
   become_user: root
   become_method: sudo
 
-- apt_repository:
-    repo: ppa:regolith-linux/release
-    state: present
-  become: yes
-  become_user: root
-  become_method: sudo
-
 - name: Install apt packages
   apt:
     name: "{{ item }}"

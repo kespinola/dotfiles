@@ -21,7 +21,6 @@ packages:
 
   # GUI
   - chromium-browser
-  - regolith-desktop-complete
 
 remove_packages:
   - gnome-shell-extension-ubuntu-dock
