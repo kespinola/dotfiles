@@ -11,7 +11,6 @@
 # https://i3wm.org/docs/userguide.html#assign_workspace
 exec --no-startup-id i3-msg 'exec 1password' 
 exec --no-startup-id i3-msg 'exec spotify' 
-exec --no-startup-id i3-msg 'exec lotion'
 exec --no-startup-id i3-msg 'exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'exec gnome-terminal' 
 exec --no-startup-id i3-msg 'exec code'
